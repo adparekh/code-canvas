@@ -43,13 +43,9 @@ export const MessagesContainer = ({
     )
   );
 
-  const messagesList = Array.isArray(messages)
-    ? messages
-    : isSuperJSONResponse(messages)
-    ? messages.json || []
-    : [];
+  const messagesList = isSuperJSONResponse(messages) ? messages.json : messages;
 
-    // TODO: This is causing problems
+  // TODO: This is causing problems
   // useEffect(() => {
   //   const lastAssistantMessageWithFragment = messagesList.findLast(
   //     (message) => message.role === "ASSISTANT" && !!message.fragment
