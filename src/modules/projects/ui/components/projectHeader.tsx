@@ -23,6 +23,17 @@ interface Props {
   projectId: string;
 }
 
+interface SuperJSONResponse<T> {
+  json: T;
+  meta?: Record<string, unknown>;
+}
+
+function isSuperJSONResponse<T>(
+  value: T | SuperJSONResponse<T>
+): value is SuperJSONResponse<T> {
+  return typeof value === "object" && value !== null && "json" in value;
+}
+
 export const ProjectHeader = ({ projectId }: Props) => {
   const trpc = useTRPC();
   const { data: project } = useSuspenseQuery(
@@ -30,6 +41,10 @@ export const ProjectHeader = ({ projectId }: Props) => {
   );
 
   const { setTheme, theme } = useTheme();
+
+  const projectData = isSuperJSONResponse(project) ? project.json : project;
+
+//   console.log("data", project);
 
   return (
     <header className="p-2 flex justify-between items-center border-b">
@@ -41,7 +56,7 @@ export const ProjectHeader = ({ projectId }: Props) => {
             className="focus-visible:ring-0 hover:bg-transparent hover:opacity-75 transition-opacity pl-2!"
           >
             <Image src="/logo.svg" alt="Code Canvas" width={18} height={18} />
-            <span className="text-sm font-medium">{project.json.name}</span>
+            <span className="text-sm font-medium">{projectData.name}</span>
             <ChevronDownIcon />
           </Button>
         </DropdownMenuTrigger>
