@@ -3,9 +3,13 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { MessageCard } from "./messageCard";
 import { MessageForm } from "./messageForm";
 import { useEffect, useRef } from "react";
+import { Fragment } from "@/generated/prisma";
+import { MessageLoading } from "./messageLoading";
 
 interface Props {
   projectId: string;
+  activeFragment: Fragment | null;
+  setActiveFragment: (fragment: Fragment | null) => void;
 }
 
 interface SuperJSONResponse<T> {
@@ -19,14 +23,24 @@ function isSuperJSONResponse<T>(
   return typeof value === "object" && value !== null && "json" in value;
 }
 
-export const MessagesContainer = ({ projectId }: Props) => {
+export const MessagesContainer = ({
+  projectId,
+  activeFragment,
+  setActiveFragment,
+}: Props) => {
   const bottomRef = useRef<HTMLDivElement>(null);
   const trpc = useTRPC();
 
   const { data: messages } = useSuspenseQuery(
-    trpc.messages.getMany.queryOptions({
-      projectId,
-    })
+    trpc.messages.getMany.queryOptions(
+      {
+        projectId,
+      },
+      {
+        // TODO: Temporary Live Refresh
+        refetchInterval: 5000,
+      }
+    )
   );
 
   const messagesList = Array.isArray(messages)
@@ -35,15 +49,18 @@ export const MessagesContainer = ({ projectId }: Props) => {
     ? messages.json || []
     : [];
 
-  useEffect(() => {
-    const lastAssistantMessage = messagesList.findLast(
-      (message) => message.role === "ASSISTANT"
-    );
+    // TODO: This is causing problems
+  // useEffect(() => {
+  //   const lastAssistantMessageWithFragment = messagesList.findLast(
+  //     (message) => message.role === "ASSISTANT" && !!message.fragment
+  //   );
+  //   if (lastAssistantMessageWithFragment) {
+  //     setActiveFragment(lastAssistantMessageWithFragment.fragment);
+  //   }
+  // }, [messages, setActiveFragment]);
 
-    if (lastAssistantMessage) {
-      // TODO: Set Active Fragment
-    }
-  }, [messages]);
+  const lastMessage = messages[messages.length - 1];
+  const isLastMessageUser = lastMessage?.role === "USER";
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView();
@@ -60,11 +77,12 @@ export const MessagesContainer = ({ projectId }: Props) => {
               role={message.role}
               fragment={message.fragment}
               createdAt={message.createdAt}
-              isActiveFragment={false}
-              onFragmentClick={() => {}}
+              isActiveFragment={activeFragment?.id === message.fragment?.id}
+              onFragmentClick={() => setActiveFragment(message.fragment)}
               type={message.type}
             />
           ))}
+          {isLastMessageUser && <MessageLoading />}
           <div ref={bottomRef} />
         </div>
       </div>
