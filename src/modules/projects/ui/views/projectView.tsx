@@ -15,9 +15,8 @@ import { FragmentWeb } from "../components/fragmentWeb";
 import { CodeIcon, CrownIcon, EyeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-// import { CodeView } from "@/components/codeView";
-// <CodeView lang="ts" code="const a = 'Hello World';" />
 import { FileExplorer } from "@/components/fileExplorer";
+import { UserControl } from "@/components/userControl";
 
 interface Props {
   projectId: string;
@@ -69,6 +68,7 @@ export const ProjectView = ({ projectId }: Props) => {
                     <CrownIcon /> Upgrade
                   </Link>
                 </Button>
+                <UserControl />
               </div>
             </div>
             <TabsContent value="preview">
