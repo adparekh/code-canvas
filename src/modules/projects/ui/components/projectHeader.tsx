@@ -44,8 +44,6 @@ export const ProjectHeader = ({ projectId }: Props) => {
 
   const projectData = isSuperJSONResponse(project) ? project.json : project;
 
-//   console.log("data", project);
-
   return (
     <header className="p-2 flex justify-between items-center border-b">
       <DropdownMenu>
