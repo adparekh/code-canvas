@@ -17,10 +17,10 @@ const Page = () => {
             className="hidden md:block"
           />
         </div>
-        <h1 className="text-2xl md:text-5xl font-medium text-center">
+        <h1 className="text-xl md:text-4xl font-medium text-center">
           Canvas for Code: Sketch, Prompt, Ship
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground text-center">
+        <p className="text-lg md:text-lg text-muted-foreground text-center">
           Your imagination is the sketch. Code Canvas brings it to life.
         </p>
         <div className="max-w-3xl mx-auto w-full">
