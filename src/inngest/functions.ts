@@ -17,6 +17,7 @@ import {
 import { z } from "zod";
 import { FRAGMENT_TITLE_PROMPT, PROMPT, RESPONSE_PROMPT } from "@/prompt";
 import { prisma } from "@/lib/db";
+import { MESSAGES_LIMIT, SANDBOX_TIMEOUT } from "./types";
 
 interface AgentState {
   summary: string;
@@ -29,6 +30,7 @@ export const generateCode = inngest.createFunction(
   async ({ event, step }) => {
     const sandboxID = await step.run("get-sandbox-id", async () => {
       const sandbox = await Sandbox.create("siteforge-ai-nextjs-test-2");
+      await sandbox.setTimeout(SANDBOX_TIMEOUT);
       return sandbox.sandboxId;
     });
 
@@ -43,6 +45,7 @@ export const generateCode = inngest.createFunction(
           orderBy: {
             createdAt: "desc",
           },
+          take: MESSAGES_LIMIT,
         });
 
         for (const message of messages) {
@@ -53,7 +56,7 @@ export const generateCode = inngest.createFunction(
           });
         }
 
-        return formattedMessages;
+        return formattedMessages.reverse();
       }
     );
 
