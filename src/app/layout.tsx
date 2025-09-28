@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Code Canvas",
   description: "Sketch, Prompt, Ship",
-  // icons: {
-  //   icon: "/logo.svg",
-  // },
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
