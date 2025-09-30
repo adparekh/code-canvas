@@ -3,7 +3,7 @@
 **Canvas for Code: Sketch, Prompt, Ship**  
 *Your imagination is the sketch. Code Canvas brings it to life.*  
 
-🚀 **[Live Demo]([https://your-demo-link.com](https://code-canvas-ivory.vercel.app/))**  
+🚀 **[Live Demo](https://code-canvas-ivory.vercel.app/)**  
 
 Code Canvas is an **AI-powered web app builder** that transforms natural language prompts into fully functional websites.  
 It provides an **interactive coding experience** with a dual-panel interface:  
