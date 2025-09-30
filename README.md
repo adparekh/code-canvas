@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 
-# <img src="./public/logo.svg" alt="Code Canvas Logo" width="30" height="30"> Code Canvas – AI-Powered Web App Builder
+# <img src="./public/logo.svg" alt="Code Canvas Logo" width="30" height="30"> Code Canvas – An AI-Powered Web App Builder
 
 <!-- markdownlint-enable MD033 -->
 
@@ -75,7 +75,7 @@ This project is built with some of the latest technologies in web development an
 
 ## 🎥 Demo Video
 
-👉 [Watch Demo Video](https://your-video-link.com)
+👉 [Watch Demo Video](https://youtu.be/cB-DsdIISJI)
 
 ---
 
