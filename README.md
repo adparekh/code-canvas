@@ -1,82 +1,97 @@
-# <img src="./public/logo.svg" alt="Code Canvas Logo" width="30" height="30"> Code Canvas – AI-Powered Web App Builder  
+<!-- markdownlint-disable MD033 -->
+
+# <img src="./public/logo.svg" alt="Code Canvas Logo" width="30" height="30"> Code Canvas – AI-Powered Web App Builder
+
+<!-- markdownlint-enable MD033 -->
 
 **Canvas for Code: Sketch, Prompt, Ship**  
-*Your imagination is the sketch. Code Canvas brings it to life.*  
+_Your imagination is the sketch. Code Canvas brings it to life._
 
-🚀 **[Live Demo](https://code-canvas-ivory.vercel.app/)**  
+🚀 **[Live Demo](https://code-canvas-ivory.vercel.app/)**
 
 Code Canvas is an **AI-powered web app builder** that transforms natural language prompts into fully functional websites.  
-It provides an **interactive coding experience** with a dual-panel interface:  
-- **Chatbot-style prompt panel** on the left  
-- **Website view** on the right, with two tabs:  
-  - **Code** – complete source code with a file explorer and folder structure  
-  - **Demo** – a live, running version of the generated app inside a secure Docker sandbox  
+It provides an **interactive coding experience** with a dual-panel interface:
 
-The platform is designed for **experimentation with modern full-stack technologies, AI coding agents, and secure cloud sandboxes.**  
+- **Chatbot-style prompt panel** on the left
+- **Website view** on the right, with two tabs:
+  - **Code** – complete source code with a file explorer and folder structure
+  - **Demo** – a live, running version of the generated app inside a secure Docker sandbox
 
----
-
-## ✨ Features  
-
-- 🔹 **AI-driven coding agent** powered by OpenAI GPT-4 that generates Next.js applications.  
-- 🔹 **Secure execution environment** with [E2B sandboxes](https://e2b.dev), enabling real-time app previews with live URLs.  
-- 🔹 **Background job orchestration** via [Inngest](https://www.inngest.com/) to handle long-running code generation tasks.  
-- 🔹 **Project dashboard** where users can revisit their previous “Canvases,” view source code, and run live demos.  
-- 🔹 **Full authentication system** using Clerk for sign-in/sign-up.  
-- 🔹 **Dark mode support** throughout the application.  
-- 🔹 **Docker-powered custom sandbox templates** for different runtime environments.  
-- 🔹 **Postgres (via Neon)** for storing generated projects and user data.  
+The platform is designed for **experimentation with modern full-stack technologies, AI coding agents, and secure cloud sandboxes.**
 
 ---
 
-## 🛠️ Tech Stack  
+## ✨ Features
 
-This project is built with some of the latest technologies in web development and cloud infrastructure:  
-
-- **Frontend / Frameworks**  
-  - [Next.js 15](https://nextjs.org/) with **Server Components** and **SSR**  
-  - [React 19](https://react.dev/)  
-
-- **Styling & UI**  
-  - [TailwindCSS v4](https://tailwindcss.com/)  
-  - [shadcn/ui](https://ui.shadcn.com/)  
-
-- **Backend / API**  
-  - [tRPC](https://trpc.io/) with [TanStack Query](https://tanstack.com/query) for type-safe full-stack APIs  
-  - [Prisma ORM](https://www.prisma.io/)  
-
-- **Database & Storage**  
-  - [Postgres (Neon)](https://neon.tech/)  
-
-- **Authentication**  
-  - [Clerk](https://clerk.dev/)  
-
-- **Infrastructure**  
-  - [Inngest](https://www.inngest.com/) for background jobs and AI agent orchestration  
-  - [E2B Sandbox](https://e2b.dev/) for secure cloud execution of AI-generated code  
-  - [Docker](https://www.docker.com/) for sandbox templates  
-  - [Vercel](https://vercel.com/) for deployment  
-
-- **AI & Agents**  
-  - [OpenAI GPT-4](https://openai.com/) for code generation and agent reasoning  
+- 🔹 **AI-driven coding agent** powered by OpenAI GPT-4 that generates Next.js applications.
+- 🔹 **Secure execution environment** with [E2B sandboxes](https://e2b.dev), enabling real-time app previews with live URLs.
+- 🔹 **Background job orchestration** via [Inngest](https://www.inngest.com/) to handle long-running code generation tasks.
+- 🔹 **Project dashboard** where users can revisit their previous “Canvases,” view source code, and run live demos.
+- 🔹 **Full authentication system** using Clerk for sign-in/sign-up.
+- 🔹 **Dark mode support** throughout the application.
+- 🔹 **Docker-powered custom sandbox templates** for different runtime environments.
+- 🔹 **Postgres (via Neon)** for storing generated projects and user data.
 
 ---
 
-## 🎥 Demo Video  
+## 🛠️ Tech Stack
 
-👉 [Watch Demo Video](https://your-video-link.com)  
+This project is built with some of the latest technologies in web development and cloud infrastructure:
+
+- **Frontend / Frameworks**
+
+  - [Next.js 15](https://nextjs.org/) with **Server Components** and **SSR**
+  - [React 19](https://react.dev/)
+
+- **Styling & UI**
+
+  - [TailwindCSS v4](https://tailwindcss.com/)
+  - [shadcn/ui](https://ui.shadcn.com/)
+
+- **Backend / API**
+
+  - [tRPC](https://trpc.io/) with [TanStack Query](https://tanstack.com/query) for type-safe full-stack APIs
+  - [Prisma ORM](https://www.prisma.io/)
+
+- **Database & Storage**
+
+  - [Postgres (Neon)](https://neon.tech/)
+
+- **Authentication**
+
+  - [Clerk](https://clerk.dev/)
+
+- **Infrastructure**
+
+  - [Inngest](https://www.inngest.com/) for background jobs and AI agent orchestration
+  - [E2B Sandbox](https://e2b.dev/) for secure cloud execution of AI-generated code
+  - [Docker](https://www.docker.com/) for sandbox templates
+  - [Vercel](https://vercel.com/) for deployment
+
+- **AI & Agents**
+  - [OpenAI GPT-4](https://openai.com/) for code generation and agent reasoning
 
 ---
 
-## 📸 Screenshots  
+## 🎥 Demo Video
 
-| Home Page | Code View | Live Demo View |  
-|--------------|--------------|----------------------------|  
-| ![Prompt Screenshot](./assets/home-page.png) | ![Project Screenshot](./assets/code-view.png) | ![Demo Screenshot](./assets/live-demo-view.png) |  
+👉 [Watch Demo Video](https://your-video-link.com)
 
 ---
 
-## 📂 Project Structure  
+## 📸 Screenshots
+
+| Home Page (Light)                                  | Code View (Light)                                   | Live Demo View (Light)                                |
+| -------------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------- |
+| ![Prompt Screenshot](./assets/home-page-light.png) | ![Project Screenshot](./assets/code-view-light.png) | ![Demo Screenshot](./assets/live-demo-view-light.png) |
+
+| Home Page (Dark)                                  | Code View (Dark)                                   | Live Demo View (Dark)                                |
+| ------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------- |
+| ![Prompt Screenshot](./assets/home-page-dark.png) | ![Project Screenshot](./assets/code-view-dark.png) | ![Demo Screenshot](./assets/live-demo-view-dark.png) |
+
+---
+
+## 📂 Project Structure
 
 ```bash
 ├── public/
@@ -100,7 +115,7 @@ This project is built with some of the latest technologies in web development an
 
 ---
 
-## 🚀 Getting Started  
+## 🚀 Getting Started
 
 ### 1. Clone the repo
 
@@ -147,10 +162,10 @@ NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL
 
 ```bash
 npm run dev
-npx inngest-cli@ dev 
+npx inngest-cli@ dev
 ```
 
-Your app will be running at http://localhost:3000 and the inngest server will be running at http://localhost:8288 🎉.
+Your app will be running at <http://localhost:3000> and the inngest server will be running at <http://localhost:8288> 🎉.
 
 ---
 
